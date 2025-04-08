@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact - TRUST HEATING & A/C SERVICES LLC</title>
+    <link rel="shortcut icon" href="./assets/Group 54.png" type="image/x-icon">
+</head>
+<body id="body">
+    <div id="main-container"></div>
+    <script>
+        const body = document.getElementById('body');
+        const mainContainer = document.getElementById('main-container');
+
+
+        const applyStyles = (el, styles) => {
+            for (const property in styles) {
+                el.style[property] = styles[property];
+            }
+        };
+
+
+        applyStyles(body, {
+            margin: '0',
+            padding: '0',
+            fontFamily: 'Arial, sans-serif',
+            backgroundColor: '#f3f4f6',
+        });
+
+        const navbar = document.createElement('div');
+        navbar.innerHTML = `
+      <div class="flex-container">
+        <div class="nav-section1">
+          <img src="./assets/Group 54.png" alt="Logo" class="logo" />
+          <h1 class="navbar-title">TRUST HEATING & A/C SERVICES LLC</h1>
+        </div>
+        <div class="nav-section2">
+          <div class="links">
+            <a href="index.html" class="nav-link">HOME</a>
+            <a href="services.html" class="nav-link">SERVICES</a>
+            <a href="about.html" class="nav-link">ABOUT</a>
+            <a href="blog.html" class="nav-link">BLOG</a>
+            <a href="contact.html" class="nav-link">CONTACT</a>
+          </div>
+          <div class="social-links">
+            <a href=""><img src="./assets/Group 4 (1).png" alt="Social 1" class="social-icon" /></a>
+            <a href=""><img src="./assets/Group 3 (1).png" alt="Social 2" class="social-icon" /></a>
+            <a href=""><img src="./assets/Group 5 (1).png" alt="Social 3" class="social-icon" /></a>
+          </div>
+        </div>
+        <div class="nav-section3">
+          <h2 class="contact-title">CONTACT US</h2>
+          <p class="contact-number">7034747878</p>
+        </div>
+      </div>
+    `;
+        mainContainer.appendChild(navbar);
+
+
+        applyStyles(navbar, {
+            backgroundColor: '#2d3748',
+            color: 'white',
+            padding: '1rem',
+        });
+
+        const navContainer = navbar.querySelector('.flex-container');
+        applyStyles(navContainer, {
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            flexWrap: 'wrap',
+        });
+
+        const navLeft = navbar.querySelector('.nav-section1');
+        applyStyles(navLeft, {
+            display: 'flex',
+            alignItems: 'center',
+            gap: '0.5rem',
+        });
+        const logo = navLeft.querySelector('.logo');
+        applyStyles(logo, {
+            height: '3rem',
+        });
+        const navbarTitle = navLeft.querySelector('.navbar-title');
+        applyStyles(navbarTitle, {
+            fontSize: '1.125rem',
+            fontWeight: 'bold',
+        });
+
+
+        const navCenter = navbar.querySelector('.nav-section2');
+        applyStyles(navCenter, {
+            display: 'flex',
+            alignItems: 'center',
+            gap: '2rem',
+        });
+        const navLinks = navCenter.querySelectorAll('.nav-link');
+        navLinks.forEach(link => {
+            applyStyles(link, {
+                color: 'white',
+                textDecoration: 'none',
+                margin: '0 0.5rem',
+                transition: 'color 0.3s',
+                fontWeight: 'bold'
+            });
+            link.addEventListener('mouseover', () => {
+                link.style.color = '#fbbf24';
+            });
+            link.addEventListener('mouseout', () => {
+                link.style.color = 'white';
+            });
+        });
+        const socialLinks = navCenter.querySelector('.social-links');
+        applyStyles(socialLinks, {
+            display: 'flex',
+            gap: '1rem',
+        });
+        const socialIcons = socialLinks.querySelectorAll('.social-icon');
+        socialIcons.forEach(icon => {
+            applyStyles(icon, {
+                height: '1.5rem',
+            });
+        });
+
+
+        const navRight = navbar.querySelector('.nav-section3');
+        applyStyles(navRight, {
+            textAlign: 'right',
+        });
+        const contactTitle = navRight.querySelector('.contact-title');
+        applyStyles(contactTitle, {
+            fontSize: '1rem',
+            fontWeight: '600',
+        });
+        const contactNumber = navRight.querySelector('.contact-number');
+        applyStyles(contactNumber, {
+            fontSize: '0.875rem',
+        });
+
+
+        const contactSection = document.createElement('div');
+        contactSection.innerHTML = `
+      <div class="contact-section-details">
+        <div class="contact-section-text">
+          <img src="./assets/Vector.png" alt="Icon" class="section-icon" />
+          <p class="section-subtitle">Book appointment</p>
+          <h1 class="section-title">Get a Quote</h1>
+        </div>
+        <div class="contact-form">
+          <form class="form" novalidate>
+            <input type="text" placeholder="Your Name" name="text" />
+            <input type="email" placeholder="Your Email" name="email" />
+            <input type="number" placeholder="Phone" name="number" />
+            <input type="number" placeholder="Zip Code" name="number" />
+            <input type="text" placeholder="Service You Need" name="text" />
+            <textarea name="subject" placeholder="Write a message"></textarea>
+            <button type="submit">Request a quote now</button>
+          </form>
+        </div>
+      </div>
+    `;
+        mainContainer.appendChild(contactSection);
+
+
+        applyStyles(contactSection, {
+            backgroundColor: 'white',
+            padding: '3rem 1rem',
+        });
+        const contactDetails = contactSection.querySelector('.contact-section-details');
+        applyStyles(contactDetails, {
+            maxWidth: '900px',
+            margin: '0 auto',
+            padding: '0 1rem',
+        });
+        const contactText = contactSection.querySelector('.contact-section-text');
+        applyStyles(contactText, {
+            textAlign: 'center',
+            marginBottom: '2rem',
+        });
+        const sectionIcon = contactSection.querySelector('.section-icon');
+        applyStyles(sectionIcon, {
+            display: 'block',
+            margin: '0 auto 1rem auto',
+        });
+        const sectionSubtitle = contactSection.querySelector('.section-subtitle');
+        applyStyles(sectionSubtitle, {
+            color: '#fbbf24',
+            fontSize: '0.875rem',
+            padding: '0.5rem 0',
+        });
+        const sectionTitle = contactSection.querySelector('.section-title');
+        applyStyles(sectionTitle, {
+            fontSize: '2.25rem',
+            fontWeight: 'bold',
+        });
+        const form = contactSection.querySelector('.form');
+        applyStyles(form, {
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '1rem',
+        });
+        const formInputs = form.querySelectorAll('input, textarea');
+        formInputs.forEach(input => {
+            applyStyles(input, {
+                width: '100%',
+                padding: '1rem',
+                borderRadius: '0.5rem',
+                border: '1px solid #d1d5db',
+            });
+        });
+        const submitButton = form.querySelector('button');
+        applyStyles(submitButton, {
+            width: '100%',
+            padding: '1rem',
+            backgroundColor: '#fbbf24',
+            color: 'white',
+            fontWeight: 'bold',
+            border: 'none',
+            borderRadius: '0.5rem',
+            cursor: 'pointer',
+            transition: 'background-color 0.3s'
+        });
+        submitButton.addEventListener('mouseover', () => {
+            submitButton.style.backgroundColor = '#f3f4f6';
+        });
+        submitButton.addEventListener('mouseout', () => {
+            submitButton.style.backgroundColor = '#fbbf24';
+        });
+
+
+        const footerSection = document.createElement('div');
+        footerSection.innerHTML = `
+      <div class="footer-top">
+        <div class="footer-brand">
+          <img src="./assets/Group 53.png" alt="Footer Logo" class="footer-logo" />
+          <h4 class="footer-company-name">TRUST HEATING & A/C SERVICES LLC</h4>
+        </div>
+        <ul class="footer-contact">
+          <li style="list-style-image: url(./assets/fcall.png)">7034747878</li>
+        </ul>
+        <div class="footer-icons">
+          <img src="./assets/fi1 (1).png" alt="Icon 1" class="footer-icon" />
+          <img src="./assets/fi1 (2).png" alt="Icon 2" class="footer-icon" />
+          <img src="./assets/fi1 (3).png" alt="Icon 3" class="footer-icon" />
+        </div>
+      </div>
+      <div class="footer-columns">
+        <div class="footer-column">
+          <h3>Quick Links</h3>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Service</a></li>
+            <li><a href="blog.html">Blog</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>Services</h3>
+          <ul class="footer-links">
+            <li><a href="services.html">Heating & A/C</a></li>
+            <li><a href="services.html">Water Heater</a></li>
+            <li><a href="services.html">Garbage Disposal</a></li>
+            <li><a href="services.html">Motor</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>Contact</h3>
+          <ul class="footer-links">
+            <li style="list-style-image: url(./assets/fcall.png)">7034747878</li>
+            <li style="list-style-image: url(./assets/femail.png)">Trustservices24@gmail.com</li>
+            <li style="list-style-image: url(./assets/flocation.png)">Springfield, Virginia 22150</li>
+          </ul>
+        </div>
+      </div>
+    `;
+        mainContainer.appendChild(footerSection);
+
+
+        applyStyles(footerSection, {
+            backgroundColor: '#2d3748',
+            color: 'white',
+            padding: '3rem 1rem',
+            marginTop: '3rem',
+        });
+        const footerTop = footerSection.querySelector('.footer-top');
+        applyStyles(footerTop, {
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            flexWrap: 'wrap',
+            marginBottom: '2rem'
+        });
+        const footerBrand = footerSection.querySelector('.footer-brand');
+        applyStyles(footerBrand, {
+            display: 'flex',
+            alignItems: 'center',
+            gap: '1rem'
+        });
+        const footerLogo = footerSection.querySelector('.footer-logo');
+        applyStyles(footerLogo, {
+            width: '48px',
+            height: '48px'
+        });
+        const footerColumns = footerSection.querySelector('.footer-columns');
+        applyStyles(footerColumns, {
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
+            gap: '2rem',
+            maxWidth: '1000px',
+            margin: '0 auto'
+        });
+        const footerLinks = footerSection.querySelectorAll('.footer-links a');
+        footerLinks.forEach(link => {
+            applyStyles(link, {
+                color: 'white',
+                textDecoration: 'none'
+            });
+            link.addEventListener('mouseover', () => {
+                link.style.color = '#fbbf24';
+            });
+            link.addEventListener('mouseout', () => {
+                link.style.color = 'white';
+            });
+        });
+    </script>
+</body>
+</html>

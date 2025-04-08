@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog - TRUST HEATING & A/C SERVICES LLC</title>
+</head>
+<body>
+    <div id="app"></div>
+    <script>
+        function applyStyles(el, styles) {
+            Object.assign(el.style, styles);
+        }
+
+        const app = document.getElementById("app");
+
+
+        const navbar = document.createElement("div");
+        applyStyles(navbar, {
+            backgroundColor: "#2d3748",
+            color: "white",
+            padding: "1rem",
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+            flexWrap: "wrap"
+        });
+
+        const navLeft = document.createElement("div");
+        const logo = document.createElement("img");
+        logo.src = "./assets/Group 54.png";
+        applyStyles(logo, { height: "48px" });
+
+        const title = document.createElement("h1");
+        title.textContent = "TRUST HEATING & A/C SERVICES LLC";
+        applyStyles(title, { marginLeft: "0.5rem", fontWeight: "bold", fontSize: "1.125rem" });
+
+        navLeft.append(logo, title);
+        applyStyles(navLeft, { display: "flex", alignItems: "center" });
+
+        const navLinks = document.createElement("div");
+        ["HOME", "SERVICES", "ABOUT", "BLOG", "CONTACT"].forEach(text => {
+            const link = document.createElement("a");
+            link.textContent = text;
+            link.href = text.toLowerCase() + ".html";
+            applyStyles(link, {
+                marginLeft: "1rem",
+                color: "white",
+                textDecoration: "none",
+                cursor: "pointer"
+            });
+            navLinks.appendChild(link);
+        });
+
+        const contact = document.createElement("div");
+        const contactTitle = document.createElement("h2");
+        contactTitle.textContent = "CONTACT US";
+        const phone = document.createElement("p");
+        phone.textContent = "7034747878";
+        contact.append(contactTitle, phone);
+
+        applyStyles(contact, { fontSize: "0.875rem", textAlign: "right" });
+
+        navbar.append(navLeft, navLinks, contact);
+        app.appendChild(navbar);
+
+
+        const blogSection = document.createElement("section");
+        applyStyles(blogSection, {
+            padding: "4rem 1rem",
+            maxWidth: "1200px",
+            margin: "0 auto",
+            textAlign: "center"
+        });
+
+        const blogHeading = document.createElement("h2");
+        blogHeading.textContent = "OUR BLOG";
+        applyStyles(blogHeading, {
+            fontSize: "2.25rem",
+            fontWeight: "bold",
+            marginBottom: "2rem"
+        });
+        blogSection.appendChild(blogHeading);
+
+        const blogGrid = document.createElement("div");
+        applyStyles(blogGrid, {
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+            gap: "2rem"
+        });
+
+        [
+            {
+                title: "Tips for Maintaining Your HVAC System",
+                image: "./assets/team1.png",
+                text: "Learn simple maintenance tips to keep your HVAC system running smoothly."
+            },
+            {
+                title: "How to Choose the Right Air Filter",
+                image: "./assets/team2.png",
+                text: "Not all filters are equal — find the right one for your home."
+            },
+            {
+                title: "When to Replace Your Heating System",
+                image: "./assets/team3.png",
+                text: "Know the signs that it's time for an upgrade."
+            }
+        ].forEach(({ title, image, text }) => {
+            const card = document.createElement("div");
+            applyStyles(card, {
+                backgroundColor: "#f7fafc",
+                borderRadius: "0.5rem",
+                padding: "1rem",
+                boxShadow: "0 2px 8px rgba(0,0,0,0.1)",
+                textAlign: "left"
+            });
+
+            const img = document.createElement("img");
+            img.src = image;
+            applyStyles(img, { width: "100%", borderRadius: "0.5rem", marginBottom: "1rem" });
+
+            const cardTitle = document.createElement("h3");
+            cardTitle.textContent = title;
+            applyStyles(cardTitle, { fontSize: "1.125rem", fontWeight: "600" });
+
+            const cardText = document.createElement("p");
+            cardText.textContent = text;
+            applyStyles(cardText, { marginTop: "0.5rem", fontSize: "0.875rem" });
+
+            card.append(img, cardTitle, cardText);
+            blogGrid.appendChild(card);
+        });
+
+        blogSection.appendChild(blogGrid);
+        app.appendChild(blogSection);
+
+
+        const footer = document.createElement("footer");
+        applyStyles(footer, {
+            backgroundColor: "#2d3748",
+            color: "white",
+            padding: "3rem 1rem",
+            marginTop: "3rem"
+        });
+
+        const footerContent = document.createElement("div");
+        applyStyles(footerContent, {
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
+            gap: "2rem",
+            maxWidth: "1000px",
+            margin: "0 auto"
+        });
+
+        const footerCols = [
+            {
+                heading: "Quick Links",
+                items: ["Home", "About", "Service", "Blog"]
+            },
+            {
+                heading: "Services",
+                items: ["Heating & A/C", "Water Heater", "Garbage Disposal", "Motor"]
+            },
+            {
+                heading: "Contact",
+                items: [
+                    "7034747878",
+                    "Trustservices24@gmail.com",
+                    "Springfield, Virginia 22150"
+                ]
+            }
+        ];
+
+        footerCols.forEach(col => {
+            const colDiv = document.createElement("div");
+            const h3 = document.createElement("h3");
+            h3.textContent = col.heading;
+            applyStyles(h3, { fontSize: "1.25rem", marginBottom: "1rem" });
+
+            col.items.forEach(item => {
+                const p = document.createElement("p");
+                p.textContent = item;
+                applyStyles(p, { fontSize: "0.875rem", marginBottom: "0.5rem" });
+                colDiv.appendChild(p);
+            });
+
+            footerContent.appendChild(colDiv);
+        });
+
+        footer.appendChild(footerContent);
+        app.appendChild(footer);
+    </script>
+</body>
+</html>

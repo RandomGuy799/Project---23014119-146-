@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Services - TRUST HEATING & A/C SERVICES LLC</title>
+    <link rel="shortcut icon" href="./assets/Group 54.png" type="image/x-icon">
+</head>
+<body id="body">
+    <div id="main-container"></div>
+    <script>
+        const body = document.getElementById('body');
+        const mainContainer = document.getElementById('main-container');
+
+        const applyStyles = (el, styles) => {
+            for (const property in styles) {
+                el.style[property] = styles[property];
+            }
+        };
+
+        applyStyles(body, {
+            fontFamily: 'Arial, sans-serif',
+            backgroundColor: '#f3f4f6',
+            margin: '0',
+            padding: '0'
+        });
+
+
+        const navbar = document.createElement('div');
+        navbar.innerHTML = `
+      <div class="flex-container">
+        <div class="nav-section1">
+          <img src="./assets/Group 54.png" alt="" class="logo" />
+          <h1 class="navbar-title">TRUST HEATING & A/C SERVICES LLC</h1>
+        </div>
+        <div class="nav-section2">
+          <div class="links">
+            <a href="index.html" class="nav-link">HOME</a>
+            <a href="services.html" class="nav-link">SERVICES</a>
+            <a href="about.html" class="nav-link">ABOUT</a>
+            <a href="blog.html" class="nav-link">BLOG</a>
+            <a href="contact.html" class="nav-link">CONTACT</a>
+          </div>
+          <div class="social-links">
+            <a href=""><img src="./assets/Group 4 (1).png" alt="" class="social-icon" /></a>
+            <a href=""><img src="./assets/Group 3 (1).png" alt="" class="social-icon" /></a>
+            <a href=""><img src="./assets/Group 5 (1).png" alt="" class="social-icon" /></a>
+          </div>
+        </div>
+        <div class="nav-section3">
+          <h2 class="contact-title">CONTACT US</h2>
+          <p class="contact-number">7034747878</p>
+        </div>
+      </div>
+    `;
+        mainContainer.appendChild(navbar);
+
+        applyStyles(navbar, {
+            backgroundColor: '#2d3748',
+            color: 'white',
+            padding: '1rem'
+        });
+
+        const flexContainer = navbar.querySelector('.flex-container');
+        applyStyles(flexContainer, {
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            flexWrap: 'wrap',
+        });
+
+        applyStyles(navbar.querySelector('.nav-section1'), {
+            display: 'flex',
+            alignItems: 'center',
+            gap: '1rem'
+        });
+
+        applyStyles(navbar.querySelector('.nav-section2'), {
+            display: 'flex',
+            alignItems: 'center',
+            gap: '2rem'
+        });
+
+        navbar.querySelectorAll('.nav-link').forEach(link => {
+            applyStyles(link, {
+                color: 'white',
+                textDecoration: 'none',
+                margin: '0 0.5rem',
+                fontWeight: 'bold',
+                transition: 'color 0.3s'
+            });
+            link.addEventListener('mouseover', () => link.style.color = '#fbbf24');
+            link.addEventListener('mouseout', () => link.style.color = 'white');
+        });
+
+
+        const servicesSection = document.createElement('div');
+        servicesSection.innerHTML = `
+      <div class="services-heading">
+        <img src="./assets/Vector.png" alt="" width="32" height="32" />
+        <p>What We Do</p>
+        <h2>Services We Offer</h2>
+      </div>
+      <div class="services-grid"></div>
+    `;
+        mainContainer.appendChild(servicesSection);
+
+        applyStyles(servicesSection, {
+            backgroundColor: 'white',
+            padding: '3rem 1rem',
+            textAlign: 'center'
+        });
+
+        const heading = servicesSection.querySelector('.services-heading');
+        applyStyles(heading, {
+            marginBottom: '2rem'
+        });
+        applyStyles(heading.querySelector('p'), {
+            color: '#fbbf24',
+            fontSize: '0.875rem',
+            margin: '0.5rem 0'
+        });
+        applyStyles(heading.querySelector('h2'), {
+            fontSize: '2rem',
+            fontWeight: 'bold'
+        });
+
+        const servicesGrid = servicesSection.querySelector('.services-grid');
+        applyStyles(servicesGrid, {
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+            gap: '2rem',
+            maxWidth: '1000px',
+            margin: '0 auto'
+        });
+
+        const services = [
+            {
+                title: 'Heating & A/C',
+                text: 'We specialize in repairing your water heater. We promise to deliver satisfaction.',
+                images: ['./assets/service.png', './assets/servicecard1.png']
+            },
+            {
+                title: 'Water Heater',
+                text: 'We are specialized in repairing your water heater. We promise to deliver satisfaction.',
+                images: ['./assets/servicecard2.png']
+            },
+            {
+                title: 'Garbage Disposal Motor',
+                text: 'We specialize in repairing your Garbage Disposal. We promise to deliver satisfaction.',
+                images: ['./assets/servicecard3.png']
+            }
+        ];
+
+        services.forEach(service => {
+            const card = document.createElement('div');
+            const imgs = service.images.map(src => `<img src="${src}" style="width: 100%; border-radius: 0.5rem;" />`).join('');
+            card.innerHTML = `
+        <div>${imgs}</div>
+        <h2 style="margin-top: 1rem; font-size: 1.25rem; font-weight: bold;">${service.title}</h2>
+        <p style="margin-top: 0.5rem; font-size: 0.875rem;">${service.text}</p>
+        <div style="margin-top: 1rem;"><a href="" style="font-weight: bold; color: #2563eb;">7034747878</a></div>
+        <p style="color: #fbbf24; margin-top: 0.5rem;">Read More >></p>
+      `;
+            applyStyles(card, {
+                backgroundColor: '#f3f4f6',
+                padding: '1.5rem',
+                borderRadius: '0.5rem',
+                boxShadow: '0 0 10px rgba(0,0,0,0.1)'
+            });
+            servicesGrid.appendChild(card);
+        });
+
+
+        const footer = document.createElement('div');
+        footer.innerHTML = `
+      <div class="footer-top">
+        <div class="footer-brand">
+          <img src="./assets/Group 53.png" alt="" width="48" height="48" />
+          <h4>TRUST HEATING & A/C SERVICES LLC</h4>
+        </div>
+        <ul>
+          <li style="list-style-image: url(./assets/fcall.png)">7034747878</li>
+        </ul>
+        <div class="footer-icons">
+          <img src="./assets/fi1 (1).png" alt="" />
+          <img src="./assets/fi1 (2).png" alt="" />
+          <img src="./assets/fi1 (3).png" alt="" />
+        </div>
+      </div>
+      <div class="footer-columns">
+        <div>
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="">Home</a></li>
+            <li><a href="">About</a></li>
+            <li><a href="">Service</a></li>
+            <li><a href="">Blog</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Services</h3>
+          <ul>
+            <li><a href="">Heating & A/C</a></li>
+            <li><a href="">Water Heater</a></li>
+            <li><a href="">Garbage Disposal</a></li>
+            <li><a href="">Motor</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Contact</h3>
+          <ul>
+            <li style="list-style-image: url(./assets/fcall.png)">7034747878</li>
+            <li style="list-style-image: url(./assets/femail.png)">Trustservices24@gmail.com</li>
+            <li style="list-style-image: url(./assets/flocation.png)">Springfield, Virginia 22150</li>
+          </ul>
+        </div>
+      </div>
+    `;
+        mainContainer.appendChild(footer);
+
+        applyStyles(footer, {
+            backgroundColor: '#2d3748',
+            color: 'white',
+            padding: '3rem 1rem',
+            marginTop: '3rem'
+        });
+
+        applyStyles(footer.querySelector('.footer-columns'), {
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
+            gap: '2rem',
+            maxWidth: '1000px',
+            margin: '2rem auto 0'
+        });
+
+        footer.querySelectorAll('a').forEach(link => {
+            applyStyles(link, {
+                color: 'white',
+                textDecoration: 'none'
+            });
+            link.addEventListener('mouseover', () => link.style.color = '#fbbf24');
+            link.addEventListener('mouseout', () => link.style.color = 'white');
+        });
+
+    </script>
+</body>
+</html>

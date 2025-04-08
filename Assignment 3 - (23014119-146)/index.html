@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TRUST HEATING & A/C SERVICES LLC</title>
+    <link rel="shortcut icon" href="./assets/Group 54.png" type="image/x-icon">
+</head>
+<body id="body">
+    <div id="main-container"></div>
+    <script>
+        const body = document.getElementById('body');
+        const mainContainer = document.getElementById('main-container');
+        const applyStyles = (el, styles) => {
+            for (const property in styles) {
+                el.style[property] = styles[property];
+            }
+        };
+
+        applyStyles(body, {
+            margin: '0',
+            padding: '0',
+            fontFamily: 'Arial, sans-serif',
+            backgroundColor: '#f3f4f6'
+        });
+
+
+        const navbar = document.createElement('div');
+        navbar.innerHTML = `
+      <div class="flex-container">
+        <div class="nav-section1">
+          <div class="navlogo-img">
+            <img src="./assets/Group 54.png" alt="Logo" class="logo" />
+            <h1 class="navbar-title">TRUST HEATING & A/C SERVICES LLC</h1>
+          </div>
+        </div>
+        <div class="nav-section2">
+          <div class="links">
+            <a href="index.html" class="nav-link">HOME</a>
+            <a href="services.html" class="nav-link">SERVICES</a>
+            <a href="about.html" class="nav-link">ABOUT</a>
+            <a href="blog.html" class="nav-link">BLOG</a>
+            <a href="contact.html" class="nav-link">CONTACT</a>
+          </div>
+          <div class="social-links">
+            <a href=""><img src="./assets/Group 4 (1).png" alt="Social 1" class="social-icon" /></a>
+            <a href=""><img src="./assets/Group 3 (1).png" alt="Social 2" class="social-icon" /></a>
+            <a href=""><img src="./assets/Group 5 (1).png" alt="Social 3" class="social-icon" /></a>
+          </div>
+        </div>
+        <div class="nav-section3">
+          <h2 class="contact-title">CONTACT US</h2>
+          <p class="contact-number">7034747878</p>
+        </div>
+      </div>
+    `;
+        mainContainer.appendChild(navbar);
+
+        // Navbar container styling
+        applyStyles(navbar, {
+            backgroundColor: '#2d3748',
+            color: 'white',
+            padding: '1rem'
+        });
+        const flexContainer = navbar.querySelector('.flex-container');
+        applyStyles(flexContainer, {
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            flexWrap: 'wrap'
+        });
+        const navSection1 = navbar.querySelector('.nav-section1');
+        applyStyles(navSection1, {
+            display: 'flex',
+            alignItems: 'center'
+        });
+        const navLogoImg = navbar.querySelector('.navlogo-img');
+        applyStyles(navLogoImg, { display: 'flex', alignItems: 'center', gap: '0.5rem' });
+        const logo = navbar.querySelector('.logo');
+        applyStyles(logo, {
+            height: '2.5rem',
+            width: '2.5rem'
+        });
+        const navbarTitle = navbar.querySelector('.navbar-title');
+        applyStyles(navbarTitle, {
+            fontSize: '1.25rem',
+            fontWeight: 'bold'
+        });
+        const navSection2 = navbar.querySelector('.nav-section2');
+        applyStyles(navSection2, {
+            display: 'flex',
+            alignItems: 'center',
+            gap: '2rem'
+        });
+        const navLinks = navbar.querySelectorAll('.nav-link');
+        navLinks.forEach(link => {
+            applyStyles(link, {
+                color: 'white',
+                textDecoration: 'none',
+                margin: '0 0.5rem',
+                transition: 'color 0.3s',
+                fontWeight: 'bold'
+            });
+            link.addEventListener('mouseover', () => {
+                link.style.color = '#60a5fa';
+            });
+            link.addEventListener('mouseout', () => {
+                link.style.color = 'white';
+            });
+        });
+        const socialLinks = navbar.querySelector('.social-links');
+        applyStyles(socialLinks, {
+            display: 'flex',
+            gap: '1rem'
+        });
+        const socialIcons = navbar.querySelectorAll('.social-icon');
+        socialIcons.forEach(icon => {
+            applyStyles(icon, {
+                height: '1.5rem',
+                width: '1.5rem'
+            });
+        });
+        const navSection3 = navbar.querySelector('.nav-section3');
+        applyStyles(navSection3, {
+            textAlign: 'right'
+        });
+        const contactTitle = navSection3.querySelector('.contact-title');
+        applyStyles(contactTitle, {
+            fontSize: '1rem',
+            fontWeight: '600'
+        });
+        const contactNumber = navSection3.querySelector('.contact-number');
+        applyStyles(contactNumber, {
+            fontSize: '0.875rem'
+        });
+
+
+        const heroSection = document.createElement('div');
+        heroSection.innerHTML = `
+      <div class="hero-section-info">
+        <h3 class="hero-heading">COMMITTED TO TOP QUALITY SERVICES</h3>
+        <p class="hero-subheading">Heating & A/C, Water Heater & ETAC. Unit Repairing and Replacement Services</p>
+        <div class="phone-number">
+          <img src="./assets/cellphone.png" alt="Cellphone Icon" class="cell-icon" />
+          <h4 class="phone-text">7034747878</h4>
+        </div>
+      </div>
+    `;
+        mainContainer.appendChild(heroSection);
+        applyStyles(heroSection, {
+            backgroundColor: '#2d3748',
+            height: '100vh'
+        });
+        const heroInfo = heroSection.querySelector('.hero-section-info');
+        applyStyles(heroInfo, {
+            textAlign: 'center',
+            color: 'white',
+            paddingTop: '5rem'
+        });
+        const heroHeading = heroSection.querySelector('.hero-heading');
+        applyStyles(heroHeading, {
+            fontSize: '1.875rem',
+            fontWeight: 'bold'
+        });
+        const heroSubheading = heroSection.querySelector('.hero-subheading');
+        applyStyles(heroSubheading, {
+            fontSize: '1.25rem',
+            margin: '1rem 0'
+        });
+        const phoneNumberDiv = heroSection.querySelector('.phone-number');
+        applyStyles(phoneNumberDiv, {
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            gap: '0.5rem'
+        });
+        const cellIcon = heroSection.querySelector('.cell-icon');
+        applyStyles(cellIcon, {
+            height: '2rem',
+            width: '2rem'
+        });
+        const phoneText = heroSection.querySelector('.phone-text');
+        applyStyles(phoneText, {
+            fontSize: '1rem'
+        });
+
+
+        const footerSection = document.createElement('div');
+        footerSection.innerHTML = `
+      <div class="footer-columns">
+        <div class="footer-column footer-column-1">
+          <div class="footer-company-brand-image">
+            <div class="footer-logo-image">
+              <img src="./assets/Group 53.png" alt="Footer Logo" class="footer-logo" />
+            </div>
+            <div class="footer-logo-text">
+              <h4 class="footer-company-name">TRUST HEATING & A/C SERVICES LLC</h4>
+            </div>
+          </div>
+          <div class="footer-contact">
+            <ul>
+              <li class="contact-item">
+                <img src="./assets/fcall.png" alt="Phone Icon" class="footer-icon" />
+                <span>7034747878</span>
+              </li>
+            </ul>
+            <div class="footer-icons">
+              <a href=""><img src="./assets/fi1 (1).png" alt="Icon 1" class="footer-icon" /></a>
+              <a href=""><img src="./assets/fi1 (2).png" alt="Icon 2" class="footer-icon" /></a>
+              <a href=""><img src="./assets/fi1 (3).png" alt="Icon 3" class="footer-icon" /></a>
+            </div>
+          </div>
+        </div>
+        <div class="footer-column footer-column-2">
+          <h3 class="footer-heading">Quick links</h3>
+          <ul class="footer-links">
+            <li><a href="index.html" class="footer-link">Home</a></li>
+            <li><a href="about.html" class="footer-link">About</a></li>
+            <li><a href="services.html" class="footer-link">Service</a></li>
+            <li><a href="blog.html" class="footer-link">Blog</a></li>
+          </ul>
+        </div>
+        <div class="footer-column footer-column-3">
+          <h3 class="footer-heading">Services</h3>
+          <ul class="footer-links">
+            <li><a href="services.html" class="footer-link">Heating & A/C</a></li>
+            <li><a href="services.html" class="footer-link">Water Heater</a></li>
+            <li><a href="services.html" class="footer-link">Garbage Disposal</a></li>
+            <li><a href="services.html" class="footer-link">Motor</a></li>
+          </ul>
+        </div>
+        <div class="footer-column footer-column-4">
+          <h3 class="footer-heading">Contact</h3>
+          <ul class="footer-links">
+            <li class="contact-item">
+              <img src="./assets/fcall.png" alt="Phone Icon" class="footer-icon" />
+              <span>7034747878</span>
+            </li>
+            <li class="contact-item">
+              <img src="./assets/femail.png" alt="Email Icon" class="footer-icon" />
+              <span>Trustservices24@gmail.com</span>
+            </li>
+            <li class="contact-item">
+              <img src="./assets/flocation.png" alt="Location Icon" class="footer-icon" />
+              <span>Springfield, Virginia 22150</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    `;
+        mainContainer.appendChild(footerSection);
+
+
+        applyStyles(footerSection, {
+            backgroundColor: '#2d3748',
+            color: 'white',
+            padding: '2.5rem 1rem'
+        });
+
+        const footerColumns = footerSection.querySelector('.footer-columns');
+        applyStyles(footerColumns, {
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
+            gap: '2rem',
+            maxWidth: '1100px',
+            margin: '0 auto'
+        });
+
+
+        const footerHeadings = footerSection.querySelectorAll('.footer-heading');
+        footerHeadings.forEach(heading => {
+            applyStyles(heading, {
+                fontSize: '1.25rem',
+                fontWeight: '600',
+                marginBottom: '1rem'
+            });
+        });
+        const footerLinks = footerSection.querySelectorAll('.footer-link');
+        footerLinks.forEach(link => {
+            applyStyles(link, {
+                color: 'white',
+                textDecoration: 'none',
+                display: 'block',
+                marginBottom: '0.5rem',
+                transition: 'color 0.3s'
+            });
+            link.addEventListener('mouseover', () => {
+                link.style.color = '#60a5fa';
+            });
+            link.addEventListener('mouseout', () => {
+                link.style.color = 'white';
+            });
+        });
+
+        const footerContactItems = footerSection.querySelectorAll('.contact-item');
+        footerContactItems.forEach(item => {
+            applyStyles(item, {
+                display: 'flex',
+                alignItems: 'center',
+                gap: '0.5rem'
+            });
+            const icons = item.querySelectorAll('.footer-icon');
+            icons.forEach(icon => {
+                applyStyles(icon, {
+                    height: '1rem',
+                    width: '1rem'
+                });
+            });
+        });
+
+        const footerBrand = footerSection.querySelector('.footer-column-1');
+        applyStyles(footerBrand, {
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '1rem'
+        });
+        const footerLogoImg = footerBrand.querySelector('.footer-logo-image img');
+        if (footerLogoImg) {
+            applyStyles(footerLogoImg, {
+                height: '3rem',
+                width: '3rem'
+            });
+        }
+    </script>
+</body>
+</html>
